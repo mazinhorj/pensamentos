@@ -8,7 +8,13 @@
         {{/if}}
     {{else}}
         <h2>Todos os Pensamentos</h2>
-        <p>Atualmente temos <span>{{pensamentosQtd}}</span> pensamentos cadastrados.</p>
+        <p>Atualmente temos 
+            {{#if pensamentosQtd}}
+            <span> {{pensamentosQtd}} </span>
+            {{else}}
+            <span> 0 </span>
+            {{/if}}
+            pensamentos cadastrados.</p>
     {{/if}}
     <form action="/" method="get">
         <input type="text" name="search" placeholder="Procurando alguma coisa?">
