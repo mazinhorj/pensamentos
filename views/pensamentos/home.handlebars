@@ -1,0 +1,42 @@
+<div class="home-header">
+    {{#if search}}
+        <h2>Você buscou por: <span>{{search}}</span></h2>
+        {{#if pensamentosQtd}}
+            <p>Foram encontrados <span>{{pensamentosQtd}}</span> pensamentos.</p>
+        {{else}}
+            <p>Desculpe! Não encontrei um pensamento com o termo buscado.</p>
+        {{/if}}
+    {{else}}
+        <h2>Todos os Pensamentos</h2>
+        <p>Atualmente temos <span>{{pensamentosQtd}}</span> pensamentos cadastrados.</p>
+    {{/if}}
+    <form action="/" method="get">
+        <input type="text" name="search" placeholder="Procurando alguma coisa?">
+        <button type="submit" class="btn">Buscar <i class="bi bi-search"></i></button>
+    </form>
+    <div class="order-container">
+        <span>Ordenar por:</span>
+        <form action="/" method="get">
+            <input type="hidden" name="search" value="{{this.search}}">
+            <input type="hidden" name="order" value="new">
+            <button type="submit"><i class="bi bi-arrow-up"></i></button>
+        </form>
+        <form action="/" method="get">
+            <input type="hidden" name="search" value="{{this.search}}">
+            <input type="hidden" name="order" value="old">
+            <button type="submit"><i class="bi bi-arrow-down"></i></button>
+        </form>
+        <a href="/">Limpar</a>
+    </div>
+</div>
+<div class="toughts-container">
+    {{#each pensamentos}}
+    <figure>
+        <blockquote>
+            "{{this.titulo}}"
+        </blockquote>
+        <figcaption>por <span>{{this.User.name}}</span></figcaption>
+    </figure>
+
+    {{/each}}
+</div>

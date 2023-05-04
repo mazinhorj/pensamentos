@@ -1,0 +1,14 @@
+Extensões básicas para aplicação web com login
+
+npm install 
+	bcryptjs 
+	connect-flash 
+	cookie-parser 
+	cookie-session 
+	express 
+	express-flash 
+	express-session 
+	mysql2 sequelize 
+	express-handlebars 
+	nodemon 
+	session-file-store
